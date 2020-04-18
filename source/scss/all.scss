@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+$primary-color: #808080;
+$secondary-color: #A9A9A9;
+$hover-color: #C0C0C0;
+
+/********************header****************************/
+header {
+  height: 50px;
+  padding: 0 100px;
+  background: $primary-color;
+  width: 100%;
+  box-sizing: border-box;
+}
+header .logo {
+  color: #fff;
+  height: 50px;
+  line-height: 50px;
+  font-size: 24px;
+  float: left;
+  font-size: bold;
+}
+header nav {
+  float: right;
+}
+header nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+header nav ul li {
+  list-style: none;
+  position: relative;
+}
+header nav ul li ul {
+  position: absolute;
+  left: 0;
+  background: $secondary-color;
+  display: none;
+}
+header nav ul li:hover ul {
+  display: block;
+}
+header nav ul li ul li {
+  display: block;
+  width: 200px;
+}
+header nav ul li a {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 10px;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+header nav ul li a:hover {
+  color: #fff;
+  text-decoration: none;
+  background: $hover-color;
+}
+.menu-toggle {
+  float: right;
+  color: #fff;
+  line-height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
+@media (max-width: 767px) {
+  header {
+    padding: 0 40px;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  header nav {
+    position: absolute;
+    top: 50px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 50px);
+    transition: .5s;
+    background: $secondary-color;
+  }
+  header nav.active {
+    left: 0;
+  }
+  header nav ul {
+    display: block;
+    text-align: center;
+  }
+  header nav ul li:hover ul {
+    display: none;
+  }
+  header nav ul li.active ul {
+    display: block;
+    position: relative;
+  }
+  header nav ul li ul li {
+    width: 100%;
+  }
+  header nav ul li~li {
+    border-top: 1px solid #D3D3D3;
+  }
+  header nav ul li ul li:first-child {
+    border-top: 1px solid #D3D3D3;
+  }
+}
+/***************carousel****************************/
+.carousel li {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+}
+/********************content**************************/
+#title {
+  margin: 50px 0;
+}
+
+#title h4 {
+  text-transform: uppercase;
+}
+#title h4:after {
+  content: '';
+  display: block;
+  width: 80px;
+    background-image: linear-gradient(to right, $hover-color 33.33%, $secondary-color 33.33% 66.66%, $primary-color 66.66% 100%);
+    height: 4px;
+    margin: 4px auto 40px;
+}
+/********************title*******************************/
+#title .item {
+  margin: 10px 0;
+  cursor: pointer;
+  border: 1px solid $hover-color;
+}
+#title .item img {
+  width: 100%;
+  transform: scale(1, 1);
+  transition: all .5s ease; 
+}
+#title .item:hover img {
+  transform: scale(1.1, 1.1);
+}
+#title .item .content {
+  padding: 10px 0 5px 10px;
+}
+#title .item h5{
+  text-transform: uppercase;
+}
+#title .item p {
+  text-transform: uppercase;
+}
+@media (max-width: 767px) {
+    #title .item:hover img {
+      transform: scale(1, 1);
+  }
+}
+/******************footer***************************************/
+.footer {
+  width: 100%;
+  height: 150px;
+  line-height: 150px;
+  color: #fff;
+  text-transform: uppercase;
+  background: $primary-color;
+}
