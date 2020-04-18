@@ -1,0 +1,1 @@
+!function(i){i(".menu-toggle").on("click",function(){i("nav").toggleClass("active")}),i("ul li").on("click",function(){i(this).siblings().removeClass("active"),i(this).toggleClass("active")})}($);
