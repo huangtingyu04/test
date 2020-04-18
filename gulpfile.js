@@ -28,7 +28,7 @@ gulp.task('vendor', function () {
 })
 
 gulp.task('deploy', function () {
-  return gulp.src('./dist/**/*')
+  return gulp.src('./public/**/*')
     .pipe(ghPages());
 });
 
